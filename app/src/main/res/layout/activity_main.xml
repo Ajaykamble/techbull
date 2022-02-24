@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:weightSum="100"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_weight="10"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Search For Movie/Show Name"
+                android:layout_margin="5dp"
+                android:cursorVisible="false"
+                android:id="@+id/edit_search"/>
+        </LinearLayout>
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="90"
+            android:id="@+id/layout_swipe"
+            >
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/layout_moviewlist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:weightSum="100"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <Button
+                android:onClick="prevPage"
+                android:text="Previous"
+                android:layout_weight="50"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"></Button>
+            <Button
+                android:text="Next"
+                android:layout_weight="50"
+                android:layout_width="0dp"
+                android:onClick="nextPage"
+                android:layout_height="wrap_content"></Button>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
